@@ -575,6 +575,7 @@ main {
   background: var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
+  display: flex;
 }
 
 /**
