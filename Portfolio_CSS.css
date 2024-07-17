@@ -563,8 +563,9 @@ main {
   padding: 20px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);
-  width: 150px;
+  width: 170px;
   z-index: 1;
+  display: flex;
 }
 
 .btn-item::before {
