@@ -1971,3 +1971,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+@media (min-width: 425px) {
+  .skill-list { grid-template-columns: repeat(2, 1fr); }
+  }
+
+@media (min-width: 768px) {
+.skill-list { grid-template-columns: repeat(3, 1fr); }
+}
