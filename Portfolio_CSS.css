@@ -1972,7 +1972,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 }
 
-@media (min-width: 425px) {
+@media (min-width: 300px) {
   .skill-list { grid-template-columns: repeat(2, 1fr); }
   }
 
