@@ -612,7 +612,7 @@ main {
    z-index: -1;
  }
  
- .skill-icon-box { margin-bottom: 10px; }
+ .skill-icon-box { margin-bottom: 10px; padding-top: 10%; }
  
  .skill-icon-box img { margin: auto; }
  
