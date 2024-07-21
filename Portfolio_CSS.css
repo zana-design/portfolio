@@ -1977,5 +1977,5 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
 @media (min-width: 768px) {
-.skill-list { grid-template-columns: repeat(3, 1fr); }
+.skill-list { grid-template-columns: repeat(4, 1fr); }
 }
