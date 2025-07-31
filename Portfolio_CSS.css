@@ -380,7 +380,8 @@ main {
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  border-radius: 30px;
+  overflow: hidden;
 }
 
 .info-content .name {
