@@ -1450,45 +1450,85 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.project-item > a[href$=".pdf"], .project-item > a[href$=".jpg"], .project-item > a[href$=".jpeg"], .project-item > a[href$=".webp", .project-item > a[href*="drive.google.com"], .project-item > a[href$=".png"]').forEach(function (link) {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          var href = this.href;
-          var modal = document.getElementById('pdfModal');
-          var frame = document.getElementById('pdfFrame');
-          // If PDF, use iframe; if image, use img tag
-          if (href.match(/\.(pdf)$/i)) {
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.project-item > a[href$=".pdf"], .project-item > a[href$=".jpg"], .project-item > a[href$=".jpeg"], .project-item > a[href$=".webp"], .project-item > a[href$=".png"], .project-item > a[href*="drive.google.com"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var href = this.href;
+        var modal = document.getElementById('pdfModal');
+        var frame = document.getElementById('pdfFrame');
+        let img = modal.querySelector('img#modalImg');
+        // let loader = modal.querySelector('#modalLoader');
+        // if (!loader) {
+        //   loader = document.createElement('div');
+        //   loader.id = 'modalLoader';
+        //   loader.style.position = 'absolute';
+        //   loader.style.top = '50%';
+        //   loader.style.left = '50%';
+        //   loader.style.transform = 'translate(-50%, -50%)';
+        //   loader.style.zIndex = '10';
+        //   loader.innerHTML = '<span style="font-size:2rem;">Loading...</span>';
+        //   modal.querySelector('div').appendChild(loader);
+        // }
+        // loader.style.display = 'block';
+
+        // Google Drive file preview
+        if (href.includes('drive.google.com/file/d/')) {
+          var match = href.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+          if (match && match[1]) {
+            var fileId = match[1];
+            frame.src = 'https://drive.google.com/file/d/' + fileId + '/preview';
             frame.style.display = 'block';
-            frame.src = href;
-          } else {
-            frame.style.display = 'none';
-            // Create or reuse image element
-            let img = modal.querySelector('img#modalImg');
-            if (!img) {
-              img = document.createElement('img');
-              img.id = 'modalImg';
-              img.style.width = '100%';
-              img.style.height = '100%';
-              img.style.objectFit = 'contain';
-              modal.querySelector('div').appendChild(img);
-            }
-            img.src = href;
-            img.style.display = 'block';
+            if (img) img.style.display = 'none';
+            modal.style.display = 'block';
+            // frame.onload = function () {
+            //   loader.style.display = 'none';
+            // };
+            return;
           }
+        }
+
+        // If PDF, use iframe
+        if (href.match(/\.(pdf)$/i)) {
+          frame.style.display = 'block';
+          frame.src = href;
+          if (img) img.style.display = 'none';
           modal.style.display = 'block';
-        });
+          // frame.onload = function () {
+          //   loader.style.display = 'none';
+          // };
+        } else {
+          frame.style.display = 'none';
+          // Create or reuse image element
+          if (!img) {
+            img = document.createElement('img');
+            img.id = 'modalImg';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'contain';
+            modal.querySelector('div').appendChild(img);
+          }
+          img.src = href;
+          img.style.display = 'block';
+          modal.style.display = 'block';
+          // img.onload = function () {
+          //   loader.style.display = 'none';
+          // };
+        }
       });
     });
+  });
 
-    function closePdfModal() {
-      document.getElementById('pdfModal').style.display = 'none';
-      document.getElementById('pdfFrame').src = '';
-      let img = document.getElementById('modalImg');
-      if (img) img.style.display = 'none';
-    }
-  </script>
+  function closePdfModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfFrame').src = '';
+    let img = document.getElementById('modalImg');
+    if (img) img.style.display = 'none';
+    // let loader = document.getElementById('modalLoader');
+    // if (loader) loader.style.display = 'none';
+  }
+</script>
 
   <!--
     - custom js link
