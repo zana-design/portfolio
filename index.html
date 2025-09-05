@@ -1117,6 +1117,25 @@
               </a>
             </li>
 
+             <li class="project-item  active" data-filter-item data-category="newsletters">
+              <a href="./Newsletter.pdf">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="content/Images/newsletter mockup thumb.jpg" alt="social media banner" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Email Newsletter</h3>
+
+                <p class="project-category">Newsletters</p>
+
+              </a>
+            </li>
+
+           
             <li class="project-item  active" data-filter-item data-category="graphic design">
               <a href="content/Images/Packaging.jpg" target="_blank">
 
@@ -1548,7 +1567,45 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.project-item > a[href$=".pdf"], .project-item > a[href$=".jpg"], .project-item > a[href$=".jpeg"], .project-item > a[href$=".webp"], .project-item > a[href$=".png"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var href = this.href;
+        var modal = document.getElementById('pdfModal');
+        var frame = document.getElementById('pdfFrame');
+        // If PDF, use iframe; if image, use img tag
+        if (href.match(/\.(pdf)$/i)) {
+          frame.style.display = 'block';
+          frame.src = href;
+        } else {
+          frame.style.display = 'none';
+          // Create or reuse image element
+          let img = modal.querySelector('img#modalImg');
+          if (!img) {
+            img = document.createElement('img');
+            img.id = 'modalImg';
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'contain';
+            modal.querySelector('div').appendChild(img);
+          }
+          img.src = href;
+          img.style.display = 'block';
+        }
+        modal.style.display = 'block';
+      });
+    });
+  });
 
+  function closePdfModal() {
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfFrame').src = '';
+    let img = document.getElementById('modalImg');
+    if (img) img.style.display = 'none';
+  }
+</script>
 </body>
 
 </html>
