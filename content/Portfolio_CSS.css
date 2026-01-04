@@ -362,6 +362,7 @@ main {
 \*-----------------------------------*/
 
 .sidebar {
+  width: 350px; /* Increase this value as needed */
   margin-bottom: 15px;
   max-height: 112px;
   overflow: hidden;
