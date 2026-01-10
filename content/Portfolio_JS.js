@@ -158,3 +158,32 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+/* Theme toggle: toggles `navy-theme` on <html>; persists in localStorage */
+/* Theme toggle: toggle `navy-theme` on <html>; persist choice in localStorage as 'accent' */
+const themeToggle = document.getElementById('themeToggle');
+
+function updateThemeButton() {
+  if (!themeToggle) return;
+  const isNavy = document.documentElement.classList.contains('navy-theme');
+  themeToggle.innerHTML = isNavy ? '<ion-icon name="moon-outline"></ion-icon>' : '<ion-icon name="sunny-outline"></ion-icon>';
+  themeToggle.setAttribute('aria-pressed', isNavy);
+  themeToggle.title = isNavy ? 'Switch to wine accent' : 'Switch to navy accent';
+}
+
+// initialize from localStorage
+try {
+  const saved = localStorage.getItem('accent');
+  if (saved === 'navy') document.documentElement.classList.add('navy-theme');
+} catch (e) { }
+
+updateThemeButton();
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', function () {
+    const isNavy = document.documentElement.classList.toggle('navy-theme');
+    try { localStorage.setItem('accent', isNavy ? 'navy' : 'wine'); } catch (e) {}
+    updateThemeButton();
+  });
+}

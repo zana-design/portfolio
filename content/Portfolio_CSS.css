@@ -13,7 +13,29 @@
 
 /*-----------------------------------*\
   #CUSTOM PROPERTY
-\*-----------------------------------*/
+/* Accent-based theme: toggle `navy-theme` on <html> to switch accent color */
+/* Define explicit accent tokens for wine and navy, map core variables to --accent */
+:root {
+  --accent-wine: hsl(347, 84%, 29%); /* original wine */
+  --accent-navy: hsl(240, 100%, 25%); /* navy */
+  --accent: var(--accent-wine);
+}
+
+html.navy-theme {
+  --accent: var(--accent-navy);
+}
+
+/* Map existing accent-related variables to --accent so toggle only affects colors */
+:root {
+  --orange-yellow-crayola: var(--accent);
+  --bittersweet-shimmer: var(--accent);
+  --text-gradient-yellow: linear-gradient(90deg, var(--accent) 8%, var(--accent) 97%);
+}
+
+/* Smooth transitions when accent changes */
+html, body, .sidebar, article, .navbar, .modal-container, .modal-content, .project-img, .blog-post-item > a {
+  transition: background-color var(--transition-1), color var(--transition-1), border-color var(--transition-1);
+}
 
 :root {
 
@@ -36,22 +58,22 @@
     hsla(35, 100%, 68%, 0) 59.86%
   ), hsl(240, 2%, 13%);
   --border-gradient-onyx: hsla( 84%, 80%, 90%);
-  --text-gradient-yellow: linear-gradient(90deg, rgba(178,13,48,1) 8%, rgba(255,96,96,1) 97% );
+  --text-gradient-yellow: linear-gradient(90deg, var(--accent) 8%, var(--accent) 97% );
 
   /* solid */
 
   --jet: hsl(28, 44%, 78%);
-  --onyx: hsl(347, 84%, 29%);
-  --eerie-black-1: hsl(347, 84%, 29%);
+  --onyx: var(--accent);
+  --eerie-black-1: var(--accent);
   --eerie-black-2: hsl(28, 8%, 96%);
   --smoky-black: hsl(28, 22%, 89%);
   --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(347, 84%, 29%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(347, 84%, 29%);
+  --white-2: var(--accent);
+  --orange-yellow-crayola: var(--accent);
+  --vegas-gold: var(--accent);
   --light-gray: hsl(30, 100%, 0%);
   --light-gray-70: hsla(30, 100%, 0%);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+  --bittersweet-shimmer: var(--accent);
 
 /* gradient 
 
@@ -186,6 +208,16 @@ button {
   cursor: pointer;
 }
 
+/* Ensure ionicons render white by default, but allow component-specific overrides */
+ion-icon, .ionicon, :host .ionicon {
+  color: var(--white-1);
+}
+
+/* Social icons follow the current accent */
+.social-item .social-link ion-icon {
+  color: var(--accent);
+}
+
 input, textarea {
   display: block;
   width: 100%;
@@ -203,6 +235,13 @@ input, textarea {
 html { font-family: var(--ff-poppins); }
 
 body { background: var(--smoky-black); }
+
+/* Ensure theme toggle doesn't change typography: keep original font settings */
+html, body {
+  font-family: var(--ff-poppins);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 
 
@@ -508,7 +547,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(347, 84%, 29%);
+  background: var(--accent);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -529,12 +568,35 @@ main {
   font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
+  position: relative;
 }
 
 .navbar-link:hover,
 .navbar-link:focus { color: var(--bittersweet-shimmer); }
 
-.navbar-link.active { color: var(--orange-yellow-crayola); }
+.navbar-link.active { color: var(--white-1); }
+
+/* animated underline handled with pseudo-element for smooth hover transition */
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 60%;
+  height: 2px;
+  background: var(--white-1);
+  border-radius: 2px;
+  transition: transform var(--transition-1), background var(--transition-1);
+  pointer-events: none;
+}
+
+.navbar-link:hover::after,
+.navbar-link:focus::after,
+.navbar-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
 
 
 
@@ -573,7 +635,7 @@ main {
 
 .service-item {
   position: relative;
-  background: var(--border-gradient-onyx);
+  background: #F3F3F3;
   padding: 20px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);
@@ -584,7 +646,7 @@ main {
   content: "";
   position: absolute;
   inset: 1px;
-  background: var(--bg-gradient-jet);
+  background: #F3F3F3;
   border-radius: inherit;
   z-index: -1;
 }
@@ -1227,7 +1289,7 @@ main {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: var(--bg-gradient-jet);
+  background: #e6e6e6; 
   z-index: -1;
 }
 
