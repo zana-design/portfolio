@@ -1,0 +1,16 @@
+.marketing-project .campaign-section{max-width:none;margin:44px 0 0;padding-top:36px;border-top:1px solid #dfd7cd}
+.marketing-project .campaign-section>p:not(.eyebrow){max-width:900px}
+.marketing-project .campaign-collage{columns:3;column-gap:18px;margin-top:28px}
+.marketing-project .campaign-collage figure{break-inside:avoid;margin:0 0 18px;border:1px solid #dfd7cd;border-radius:12px;overflow:hidden;background:#ece8e1}
+.marketing-project .campaign-crop{position:relative;width:100%;aspect-ratio:var(--cw)/var(--ch);overflow:hidden}
+.marketing-project .campaign-crop img{position:absolute;top:0;left:0;width:calc(1400/var(--cw)*100%);height:auto;max-width:none;transform:translate(var(--ix),var(--iy))}
+.marketing-project .campaign-collage figcaption{font-size:13px;color:#514a44;padding:12px 14px}
+.marketing-project .campaign-results{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.marketing-project .campaign-results h3{font-size:20px;font-weight:500;margin:16px 0 10px}
+.marketing-project .campaign-results ul{padding-left:20px}
+.marketing-project .campaign-results li{margin:8px 0}
+@media(max-width:1000px){.marketing-project .campaign-collage{columns:2}}
+@media(max-width:650px){.marketing-project .campaign-collage{columns:1}.marketing-project .campaign-results{grid-template-columns:1fr;gap:16px}.marketing-project .campaign-section{margin-top:32px;padding-top:28px}}
+.marketing-project .brand-design-reasoning{grid-template-columns:1fr}
+.marketing-project .brand-design-reasoning .case-section:last-child{grid-column:auto;max-width:none}
+.marketing-project .brand-design-reasoning .case-section p{max-width:none}
