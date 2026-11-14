@@ -715,3 +715,51 @@ footer{font-size:12px}
 .portfolio-card .graphic-design-thumb img{width:100%!important;height:100%!important;padding:10px!important;object-fit:contain!important;mix-blend-mode:normal!important}
 .graphic-design-card .project-meta-line{cursor:default}
 .graphic-design-lightbox .lightbox-image-stage{background:#eeebe5}
+
+/* Full Victoria case-study text; scoped to this project page. */
+.victoria-case-content .victoria-visual-comparison figure{margin:0}
+.victoria-case-content .victoria-visual-comparison figure+figure{margin-top:36px}
+.victoria-case-content .victoria-visual-comparison img{display:block;width:100%;height:auto;border:1px solid #e3d9d5;border-radius:12px}
+.victoria-case-content .victoria-visual-comparison figcaption{margin-top:12px;color:#6b645d;font-size:13px;line-height:1.65}
+.victoria-case-content .victoria-landing-comparison a{display:block;cursor:zoom-in;border-radius:12px}
+.victoria-case-content .victoria-landing-comparison a:focus-visible{outline:3px solid var(--burgundy);outline-offset:5px}
+.victoria-case-content .victoria-case-heading{padding:30px 0 36px;margin-bottom:0}
+.victoria-case-content .victoria-toc{margin:0 0 20px}
+.victoria-case-content section[id]{scroll-margin-top:155px}
+.victoria-case-content .victoria-block>p,.victoria-case-content .victoria-detail-list,.victoria-case-content .victoria-audience-list{color:#5f5953;font-size:16px;line-height:1.85}
+.victoria-case-content .victoria-block>p{max-width:850px}
+.victoria-case-content .victoria-block>h3{margin:30px 0 12px;font-size:20px}
+.victoria-case-content li+li{margin-top:10px}
+.victoria-case-content ul{padding-left:22px}
+.victoria-case-content .victoria-audience-list{columns:2;column-gap:40px}
+.victoria-case-content .victoria-audience-list li{break-inside:avoid}
+.victoria-case-content .victoria-detail-list{max-width:950px}
+.victoria-case-content .victoria-table-wrap{max-width:100%;overflow-x:auto;border:1px solid #e3d9d5;border-radius:12px}
+.victoria-case-content .victoria-feature-table{width:100%;border-collapse:collapse;text-align:left;font-size:15px;line-height:1.6}
+.victoria-feature-table caption{padding:14px 18px;text-align:left;color:#6b645d;font-size:13px}
+.victoria-feature-table th,.victoria-feature-table td{padding:16px 18px;border-bottom:1px solid #e3d9d5;vertical-align:top;overflow-wrap:anywhere}
+.victoria-feature-table thead{background:#071e5a;color:#fff}
+.victoria-feature-table tbody th{font-weight:600;color:#473a3d}
+.victoria-feature-table tbody tr:nth-child(even){background:#fbf8f3}
+.victoria-feature-table tr:last-child>*{border-bottom:0}
+.victoria-case-content .victoria-process{margin-top:28px;align-items:start}
+.victoria-case-content .victoria-process article{flex:1}
+.victoria-case-content .victoria-process small{font-size:13px;line-height:1.65}
+.victoria-case-content .victoria-persona-grid{align-items:start}
+.victoria-case-content .victoria-persona-grid article{min-width:0}
+.victoria-case-content .victoria-persona-grid h4{margin:26px 0 10px;color:#7d3025;font-size:17px}
+.victoria-case-content .victoria-persona-grid ul{color:#625d56;font-size:14px;line-height:1.75;margin:0}
+.victoria-persona-facts{margin:20px 0;font-size:14px;line-height:1.7}
+.victoria-persona-facts>div{display:grid;grid-template-columns:95px minmax(0,1fr);gap:12px;padding:5px 0}
+.victoria-persona-facts dt{font-weight:600}
+.victoria-persona-facts dd{margin:0;color:#625d56}
+.victoria-empathy-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.victoria-empathy-grid article{padding:26px;border:1px solid #eadfe0;border-radius:14px;background:#fffaf8}
+.victoria-empathy-grid h3{margin:0 0 16px;font-family:var(--serif);font-size:27px;font-weight:500}
+.victoria-empathy-grid ul{margin:0;color:#625d56;font-size:15px;line-height:1.75}
+.victoria-case-content .victoria-type-sample>strong{font-size:clamp(36px,5vw,64px);letter-spacing:-.04em}
+.victoria-case-content .victoria-type-sample .victoria-alphabet{overflow-wrap:anywhere;font-size:13px;line-height:1.85}
+.victoria-case-content .victoria-outcome-note h2{margin:0 0 12px;font-family:var(--serif);font-size:clamp(25px,3vw,36px);font-weight:500;line-height:1.2}
+.victoria-case-content .victoria-outcome-note p{font-family:var(--sans);font-size:16px;line-height:1.7}
+@media(max-width:850px){.victoria-case-content .victoria-process{display:grid;grid-template-columns:1fr;gap:12px}.victoria-case-content .victoria-process>i{display:none}.victoria-case-content .victoria-process article{grid-template-columns:28px 100px minmax(0,1fr);gap:12px;align-items:baseline;padding:0}.victoria-case-content .victoria-process article>span{position:static}}
+@media(max-width:600px){.victoria-case-content section[id]{scroll-margin-top:155px}.victoria-case-content .victoria-audience-list{columns:1}.victoria-empathy-grid{grid-template-columns:1fr}.victoria-feature-table th,.victoria-feature-table td{padding:12px 8px;font-size:12px}.victoria-feature-table caption{padding:12px 8px}.victoria-case-content .victoria-process article{grid-template-columns:24px minmax(0,1fr)}.victoria-case-content .victoria-process small{grid-column:2}.victoria-empathy-grid article{padding:22px}}
