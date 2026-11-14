@@ -1,0 +1,13 @@
+.iplug-case .iplug-overview{max-width:none;text-align:left;margin-bottom:0;padding-bottom:48px}
+.iplug-case .iplug-principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:32px}
+.iplug-case .iplug-principles article{padding:24px;border:1px solid #dfd7cd;border-radius:16px}
+.iplug-case .iplug-principles h3{font-size:18px;font-weight:500;margin:0 0 12px}
+.iplug-case .iplug-principles p{font-size:15px;margin:0}
+.iplug-case .iplug-swatches{display:flex;gap:8px;margin-top:20px}
+.iplug-case .iplug-swatches span{width:32px;height:32px;border-radius:50%;background:#28366b}
+.iplug-case .iplug-swatches span+span{background:#f66e1d}
+.iplug-case .iplug-guidelines{flex-direction:column;align-items:flex-start;gap:24px;border-top:1px solid #dfd7cd}
+.iplug-case .iplug-guidelines-action button{font-family:inherit;border:0}
+.iplug-case .iplug-guidelines-action button:disabled{opacity:.55;cursor:not-allowed;transform:none;background:var(--ink)}
+.iplug-case .iplug-guidelines-action p{font-size:12px;color:#69625b;margin:10px 0 0}
+@media(max-width:850px){.iplug-case .iplug-principles{grid-template-columns:1fr;gap:16px}}

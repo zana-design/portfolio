@@ -1,0 +1,21 @@
+.csm-project .csm-section{max-width:none;margin:48px 0 0;padding-top:40px;border-top:1px solid #dfd7cd}
+.csm-project .csm-section>p:not(.eyebrow){max-width:850px}
+.csm-project .csm-guidelines-link{display:inline-flex;margin:16px 0 0}
+.csm-project .csm-foundations{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px}
+.csm-project .csm-foundations h3{font-size:22px;font-weight:500;margin:0 0 12px}
+.csm-project .csm-foundations p{font-size:16px;line-height:1.8;color:#69625b}
+.csm-project .csm-crop{position:relative;overflow:hidden;width:100%;aspect-ratio:var(--cw)/var(--ch);background:#fff;border-radius:12px}
+.csm-project .csm-crop img{position:absolute;top:0;left:0;width:calc(1400/var(--cw)*100%);max-width:none;height:auto;transform:translate(var(--ix),var(--iy))}
+.csm-project .csm-logo-evolution{margin:28px 0 0}
+.csm-project .csm-logo-labels{display:flex;justify-content:space-around;gap:20px;font-size:13px;color:#69625b;margin-top:12px}
+.csm-project .csm-palette{display:flex;gap:12px;margin-top:20px}
+.csm-project .csm-palette div{flex:1;min-width:0}
+.csm-project .csm-palette i{display:block;height:90px;background:var(--swatch);border:1px solid #ddd;border-radius:12px;margin-bottom:8px}
+.csm-project .csm-palette span{font-size:12px;display:block;line-height:1.6}
+.csm-project .csm-collage{columns:3;column-gap:16px;margin-top:28px}
+.csm-project .csm-collage figure{break-inside:avoid;margin:0 0 16px;background:#ece8e1;border:1px solid #dfd7cd;border-radius:14px;overflow:hidden}
+.csm-project .csm-collage .csm-crop{border-radius:0}
+.csm-project .csm-collage figcaption{padding:12px 16px;font-size:13px;color:#514a44}
+.csm-project .csm-peripheral-document{display:inline-block;margin-top:16px;color:var(--ink);text-underline-offset:5px;font-size:14px}
+@media(max-width:1000px){.csm-project .csm-collage{columns:2}}
+@media(max-width:650px){.csm-project .csm-foundations{grid-template-columns:1fr;gap:24px}.csm-project .csm-collage{columns:1}.csm-project .csm-section{margin-top:32px;padding-top:32px}.csm-project .csm-palette{gap:8px}}

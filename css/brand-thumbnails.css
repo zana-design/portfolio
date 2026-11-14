@@ -1,0 +1,11 @@
+/* Present the original brand artwork directly, without generated scenery. */
+.project-grid .brand-art-thumb{background:#ece8e1!important;border-top:1px solid rgba(35,30,25,.08)!important;isolation:isolate}
+.project-grid .brand-art-thumb .brand-art-frame{position:absolute;inset:clamp(18px,3vw,32px);min-width:0;min-height:0}
+.project-grid .brand-art-thumb .brand-art-frame img{display:block;width:100%!important;height:100%!important;object-fit:contain!important;transform:none}
+.project-grid .brand-art-guidelines{background:#eae8e3!important}
+.project-grid .brand-art-iplug{background:#ebe5dc!important}
+.project-grid .brand-art-plug-it-brand{background:#e5e9ed!important}
+.project-grid .brand-art-jerome{background:#e7e6e3!important}
+.project-grid .brand-art-pixie{background:#eee5e2!important}
+.project-grid .brand-art-thumb:hover .brand-art-frame img{transform:none}
+@media(max-width:600px){.project-grid .brand-art-thumb .brand-art-frame{inset:20px}}
