@@ -1,0 +1,11 @@
+.brochure-project .publication-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:28px;align-items:start}
+.brochure-project .publication-gallery figure{margin:0;min-width:0}
+.brochure-project .publication-gallery .publication-spread{grid-column:1/-1}
+.brochure-project .publication-gallery img{display:block;width:100%;height:auto;border:1px solid #dfd7cd;border-radius:12px;background:#fff}
+.brochure-project .publication-gallery figcaption{font-size:13px;color:#69625b;margin-top:12px;line-height:1.6}
+.brochure-project .publication-gallery a{display:block;border-radius:12px}
+.brochure-project .publication-gallery a:focus-visible{outline:2px solid var(--burgundy);outline-offset:5px}
+.brochure-project .brand-design-reasoning{grid-template-columns:1fr}
+.brochure-project .brand-design-reasoning .case-section:last-child{max-width:none}
+.brochure-project .brand-design-reasoning p{max-width:none}
+@media(max-width:650px){.brochure-project .publication-gallery{grid-template-columns:1fr;gap:24px}}
