@@ -717,6 +717,14 @@ footer{font-size:12px}
 .graphic-design-lightbox .lightbox-image-stage{background:#eeebe5}
 
 /* Full Victoria case-study text; scoped to this project page. */
+.victoria-case .portfolio-case-main{text-align:left}
+.victoria-case .victoria-case-content{width:100%;max-width:none;margin:0}
+.victoria-case .portfolio-prototype{flex-direction:column;align-items:flex-start;gap:24px}
+.victoria-case .victoria-story-intro{grid-template-columns:minmax(0,1fr);gap:24px;align-items:start}
+.victoria-case .victoria-story-intro>p{max-width:850px}
+.victoria-case .victoria-role{grid-template-columns:minmax(0,1fr);gap:10px}
+.victoria-case .victoria-outcome-note{grid-template-columns:minmax(0,1fr);gap:14px}
+.victoria-case .art-caption,.victoria-case .victoria-visual-comparison figcaption{text-align:left}
 .victoria-case-content .victoria-visual-comparison figure{margin:0}
 .victoria-case-content .victoria-visual-comparison figure+figure{margin-top:36px}
 .victoria-case-content .victoria-visual-comparison img{display:block;width:100%;height:auto;border:1px solid #e3d9d5;border-radius:12px}
