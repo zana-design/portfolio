@@ -569,7 +569,7 @@ body.palgate-case{--burgundy:#0874c9;--line:#dce5ec}
 .victoria-toc>span{flex:0 0 auto;padding-right:7px;color:#827a75;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 .victoria-toc a{flex:0 0 auto;padding:8px 12px;border:1px solid #ead9dd;border-radius:999px;color:#473a3d;font-size:11px;text-decoration:none;transition:background .2s,color .2s,border-color .2s}
 .victoria-toc a:hover,.victoria-toc a:focus-visible{background:#d94062;border-color:#d94062;color:#fff}
-.victoria-case-content{max-width:1200px;margin:0 auto}
+.victoria-case-content{width:100%;max-width:none;margin:0}
 .victoria-case-content :is(#victoria-challenge,#victoria-audience,#victoria-approach,#victoria-system,#victoria-outcome){scroll-margin-top:145px}
 .victoria-story-intro{display:grid;grid-template-columns:minmax(0,.9fr) minmax(300px,1.1fr);align-items:end;gap:clamp(30px,7vw,100px);padding:36px 0 58px;border-bottom:1px solid #e3d9d5}
 .victoria-story-intro .eyebrow,.victoria-block-heading .eyebrow{margin:0 0 10px;color:#d94062;font-size:10px;letter-spacing:.12em}
