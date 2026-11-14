@@ -1,0 +1,4 @@
+/* Focused persona portraits for the Victoria and Plug IT case studies. */
+:is(.victoria-case,.plug-it-case) .persona-portrait{position:relative;display:block;width:180px;max-width:100%;aspect-ratio:1;margin:18px 0 24px;overflow:hidden;border:1px solid var(--line);border-radius:50%;background:var(--paper)}
+:is(.victoria-case,.plug-it-case) .persona-portrait>img{position:absolute;top:0;left:0;display:block;width:calc(var(--source-width)/var(--crop-width)*100%);max-width:none;height:auto;transform:translate(var(--image-x),var(--image-y))}
+@media(max-width:600px){:is(.victoria-case,.plug-it-case) .persona-portrait{width:150px}}
